@@ -1,8 +1,8 @@
-import { inngest } from "inngest";
+import {    Inngest } from "inngest";
 import prisma from "../configs/prisma.js";
 
 // Create a client to send and receive events
-export const inngest = new inngest({ id: "project management" });
+export const inngest = new Inngest({ id: "project management" });
 
 const syncUserCreation = inngest.createFunction(
     { id: 'sync-user-from-clerk' },
