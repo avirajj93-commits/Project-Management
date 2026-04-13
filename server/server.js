@@ -4,8 +4,14 @@ import cors from 'cors';
 import { clerkMiddleware } from '@clerk/express';
 import { serve } from "inngest/express";
 import { inngest, functions } from "./inngest/index.js";
+import workspaceRouter from './routes/workspaceRoutes.js';
+import { protect } from './middlewares/authMiddleware.js';
+import webhookRoutes from './routes/webhookRoutes.js';
+const app = express();   // ✅ FIRST create app
 
-const app = express();
+app.use(express.json()); // ✅ then middlewares
+
+app.use("/api/webhooks", webhookRoutes); // ✅ then routes
 
 // ⚠️ IMPORTANT: order matters
 app.use(cors());
@@ -28,6 +34,11 @@ app.use(
     functions,
   })
 );
+
+//ROUTES
+app.use('/api/workspaces',protect, workspaceRouter);
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
