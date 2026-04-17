@@ -1,4 +1,4 @@
-import { inngest } from "../inngest.js";
+import { inngest } from "../inngest/index.js";
 import prisma from "../configs/prisma.js";
 
 //create task
