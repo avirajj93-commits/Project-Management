@@ -4,6 +4,11 @@ const initialState = {
     theme: "light",
 };
 
+const applyThemeClass = (theme) => {
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+};
+
 const themeSlice = createSlice({
     name: "theme",
     initialState,
@@ -11,20 +16,21 @@ const themeSlice = createSlice({
         toggleTheme: (state) => {
             const theme = state.theme === "light" ? "dark" : "light";
             localStorage.setItem("theme", theme);
-            document.documentElement.classList.toggle("dark");
+            applyThemeClass(theme);
             state.theme = theme;
         },
         setTheme: (state, action) => {
-            state.theme = action.payload;
+            const theme = action.payload;
+            localStorage.setItem("theme", theme);
+            applyThemeClass(theme);
+            state.theme = theme;
         },
         loadTheme: (state) => {
-            const theme = localStorage.getItem("theme");
-            if (theme) {
-                state.theme = theme;
-                if (theme === "dark") {
-                    document.documentElement.classList.add("dark");
-                }
-            }
+            const storedTheme = localStorage.getItem("theme");
+            const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            const theme = storedTheme || preferredTheme;
+            state.theme = theme;
+            applyThemeClass(theme);
         },
     },
 });

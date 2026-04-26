@@ -32,7 +32,7 @@ const Layout = () => {
 
     if(!user){
         return (
-            <div className='flex justify-center items-center h-screen bg-white dark:bg-zinc-950'>
+            <div className='app-shell flex justify-center items-center h-screen'>
                 <SignIn/>
 
             </div>
@@ -40,7 +40,7 @@ const Layout = () => {
     }
 
     if (loading) return (
-        <div className='flex items-center justify-center h-screen bg-white dark:bg-zinc-950'>
+        <div className='app-shell flex items-center justify-center h-screen'>
             <Loader2Icon className="size-7 text-blue-500 animate-spin" />
         </div>
     )
@@ -54,7 +54,7 @@ return(
 
 
     return (
-        <div className="flex bg-white dark:bg-zinc-950 text-gray-900 dark:text-slate-100">
+        <div className="app-shell flex text-gray-900 dark:text-slate-100">
             <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
             <div className="flex-1 flex flex-col h-screen">
                 <Navbar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />

@@ -34,7 +34,7 @@ const RecentActivity = () => {
     }, [currentWorkspace]);
 
     return (
-        <div className="bg-white dark:bg-zinc-950 dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-lg transition-all overflow-hidden">
+        <div className="app-panel app-card border hover:border-zinc-300 dark:hover:border-zinc-700 rounded-2xl transition-all overflow-hidden">
             <div className="border-b border-zinc-200 dark:border-zinc-800 p-4">
                 <h2 className="text-lg text-zinc-800 dark:text-zinc-200">Recent Activity</h2>
             </div>
@@ -54,9 +54,9 @@ const RecentActivity = () => {
                             const iconColor = typeIcons[task.type]?.color || "text-gray-500 dark:text-gray-400";
 
                             return (
-                                <div key={task.id} className="p-6 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
+                                <div key={task.id} className="p-6 hover:bg-sky-50/60 dark:hover:bg-zinc-900/50 transition-colors">
                                     <div className="flex items-start gap-4">
-                                        <div className="p-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+                                        <div className="p-2 app-soft-bg rounded-xl">
                                             <TypeIcon className={`w-4 h-4 ${iconColor}`} />
                                         </div>
                                         <div className="flex-1 min-w-0">

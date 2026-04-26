@@ -5,8 +5,8 @@ async function insertUser() {
         const user = await prisma.user.create({
             data: {
                 id: "user_3C2BS63lqfIcUS52gcwzR8VMQJe", // 👈 SAME Clerk ID
-                email: "test@example.com",
-                name: "Test User",
+                email: "bznxjdo@gmail.com",
+                name: "Aviraj Singh",
                 image: ""
             }
         });

@@ -21,32 +21,32 @@ export default function StatsGrid() {
             title: "Total Projects",
             value: stats.totalProjects,
             subtitle: `projects in ${currentWorkspace?.name}`,
-            bgColor: "bg-blue-500/10",
-            textColor: "text-blue-500",
+            bgColor: "bg-sky-500/15 dark:bg-sky-500/20",
+            textColor: "text-sky-600 dark:text-sky-300",
         },
         {
             icon: CheckCircle,
             title: "Completed Projects",
             value: stats.completedProjects,
             subtitle: `of ${stats.totalProjects} total`,
-            bgColor: "bg-emerald-500/10",
-            textColor: "text-emerald-500",
+            bgColor: "bg-emerald-500/15 dark:bg-emerald-500/20",
+            textColor: "text-emerald-600 dark:text-emerald-300",
         },
         {
             icon: Users,
             title: "My Tasks",
             value: stats.myTasks,
             subtitle: "assigned to me",
-            bgColor: "bg-purple-500/10",
-            textColor: "text-purple-500",
+            bgColor: "bg-indigo-500/15 dark:bg-indigo-500/20",
+            textColor: "text-indigo-600 dark:text-indigo-300",
         },
         {
             icon: AlertTriangle,
             title: "Overdue",
             value: stats.overdueIssues,
             subtitle: "need attention",
-            bgColor: "bg-amber-500/10",
-            textColor: "text-amber-500",
+            bgColor: "bg-amber-500/15 dark:bg-amber-500/20",
+            textColor: "text-amber-600 dark:text-amber-300",
         },
     ];
 
@@ -81,8 +81,8 @@ export default function StatsGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-9">
             {statCards.map(
                 ({ icon: Icon, title, value, subtitle, bgColor, textColor }, i) => (
-                    <div key={i} className="bg-white dark:bg-zinc-950 dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition duration-200 rounded-md" >
-                        <div className="p-6 py-4">
+                    <div key={i} className="app-panel app-card border hover:border-slate-300 dark:hover:border-zinc-700 transition duration-200 rounded-2xl" >
+                        <div className="p-6 py-5">
                             <div className="flex items-start justify-between">
                                 <div>
                                     <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-1">
@@ -97,7 +97,7 @@ export default function StatsGrid() {
                                         </p>
                                     )}
                                 </div>
-                                <div className={`p-3 rounded-xl ${bgColor} bg-opacity-20`}>
+                                <div className={`p-3 rounded-2xl ${bgColor}`}>
                                     <Icon size={20} className={textColor} />
                                 </div>
                             </div>

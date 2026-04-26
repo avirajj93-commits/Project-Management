@@ -33,7 +33,7 @@ const Team = () => {
                         Manage team members and their contributions
                     </p>
                 </div>
-                <button onClick={() => setIsDialogOpen(true)} className="flex items-center px-5 py-2 rounded text-sm bg-gradient-to-br from-blue-500 to-blue-600 hover:opacity-90 text-white transition" >
+                <button onClick={() => setIsDialogOpen(true)} className="app-btn-primary app-card flex items-center px-5 py-2 text-sm" >
                     <UserPlus className="w-4 h-4 mr-2" /> Invite Member
                 </button>
                 <InviteMemberDialog isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
@@ -42,7 +42,7 @@ const Team = () => {
             {/* Stats Cards */}
             <div className="flex flex-wrap gap-4">
                 {/* Total Members */}
-                <div className="max-sm:w-full dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-gray-300 dark:border-zinc-800 rounded-lg p-6">
+                <div className="max-sm:w-full app-surface app-card rounded-lg p-6">
                     <div className="flex items-center justify-between gap-8 md:gap-22">
                         <div>
                             <p className="text-sm text-gray-500 dark:text-zinc-400">Total Members</p>
@@ -55,7 +55,7 @@ const Team = () => {
                 </div>
 
                 {/* Active Projects */}
-                <div className="max-sm:w-full dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-gray-300 dark:border-zinc-800 rounded-lg p-6">
+                <div className="max-sm:w-full app-surface app-card rounded-lg p-6">
                     <div className="flex items-center justify-between gap-8 md:gap-22">
                         <div>
                             <p className="text-sm text-gray-500 dark:text-zinc-400">Active Projects</p>
@@ -70,7 +70,7 @@ const Team = () => {
                 </div>
 
                 {/* Total Tasks */}
-                <div className="max-sm:w-full dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-gray-300 dark:border-zinc-800 rounded-lg p-6">
+                <div className="max-sm:w-full app-surface app-card rounded-lg p-6">
                     <div className="flex items-center justify-between gap-8 md:gap-22">
                         <div>
                             <p className="text-sm text-gray-500 dark:text-zinc-400">Total Tasks</p>
@@ -86,7 +86,7 @@ const Team = () => {
             {/* Search */}
             <div className="relative max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-400 size-3" />
-                <input placeholder="Search team members..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-8 w-full text-sm rounded-md border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-400 py-2 focus:outline-none focus:border-blue-500" />
+                <input placeholder="Search team members..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="app-input pl-8 w-full text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-400 py-2 focus:outline-none focus:border-indigo-500" />
             </div>
 
             {/* Team Members */}
@@ -110,9 +110,9 @@ const Team = () => {
                 ) : (
                     <div className="max-w-4xl w-full">
                         {/* Desktop Table */}
-                        <div className="hidden sm:block overflow-x-auto rounded-md border border-gray-200 dark:border-zinc-800">
+                        <div className="hidden sm:block overflow-x-auto rounded-md app-surface app-card">
                             <table className="min-w-full divide-y divide-gray-200 dark:divide-zinc-800">
-                                <thead className="bg-gray-50 dark:bg-zinc-900/50">
+                                <thead className="bg-slate-100/80 dark:bg-zinc-900/50">
                                     <tr>
                                         <th className="px-6 py-2.5 text-left font-medium text-sm">
                                             Name
@@ -165,7 +165,7 @@ const Team = () => {
                             {filteredUsers.map((user) => (
                                 <div
                                     key={user.id}
-                                    className="p-4 border border-gray-200 dark:border-zinc-800 rounded-md bg-white dark:bg-zinc-900"
+                                    className="p-4 app-surface border rounded-md"
                                 >
                                     <div className="flex items-center gap-3 mb-2">
                                         <img
