@@ -20,7 +20,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
-    "inngest": "^3.52.7",
+    "inngest": "^3.54.0",
     "nodemailer": "^8.0.5",
     "prisma": "^6.17.1",
     "svix": "^1.90.0",
