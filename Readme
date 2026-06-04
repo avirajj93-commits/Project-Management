@@ -1,144 +1,281 @@
-1. Project Title and Brief Description
-Project Management System
+# 🚀 Project Management System
 
-The Project Management System is a full-stack web application developed to simplify project planning, task management, team collaboration, and workflow tracking within organizations and academic environments. The system provides a centralized platform where users can create projects, assign tasks, manage teams, monitor progress, and receive automated notifications.
+A full-stack web application designed to simplify project planning, task management, team collaboration, and workflow tracking within organizations and academic environments.
 
-The application is built using the PERN Stack (PostgreSQL, Express.js, React.js, Node.js) and integrates modern tools such as Clerk Authentication, Inngest Background Jobs, and Neon PostgreSQL Database for secure authentication, scalable backend processing, and efficient data management.
+The system provides a centralized platform where users can create projects, assign tasks, manage teams, monitor progress, and receive automated notifications.
 
-2. Technology Stack and Tools Used
-Frontend
-React.js
-Vite
-Tailwind CSS
-JavaScript (ES6+)
-Backend
-Node.js
-Express.js
-Database
-PostgreSQL
-Neon Database
-Authentication & Background Services
-Clerk Authentication
-Inngest Background Jobs
-Development Tools
-Visual Studio Code
-Git & GitHub
-Postman
-Prisma ORM
-Deployment Platforms
-Vercel
-Render
-Architecture Used
+---
 
-3-Tier Architecture
-Presentation Layer
-Application Layer
-Data Layer
+## 📌 Overview
 
-3. Features and Functionalities Implemented
+The **Project Management System** enables teams to efficiently manage projects from initiation to completion. It offers secure authentication, workspace management, task tracking, automated notifications, and analytics dashboards to improve productivity and collaboration.
 
-🔐 Secure Authentication
-User Sign Up/Login using Clerk
-Role-based access control
-Session management
+Built using the **PERN Stack (PostgreSQL, Express.js, React.js, Node.js)** along with modern cloud technologies for scalability and performance.
 
-🏢 Workspace & Organization Management
-Create and manage multiple organizations/workspaces
-Workspace-specific team collaboration
+---
 
-📁 Project Management
-Create new projects
-Edit/Delete projects
-Track project progress
-Set priorities and deadlines
+## 🛠️ Technology Stack
 
-✅ Task Management
-Create and assign tasks
-Update task status
-Track deadlines
-Task lifecycle management
+### Frontend
 
-👥 Team Collaboration
-Invite team members via email
-Assign roles
-Collaborate within workspace
+* React.js
+* Vite
+* Tailwind CSS
+* JavaScript (ES6+)
 
-🔔 Automated Notifications
-Background notification processing using Inngest
-Deadline reminders
-Task assignment alerts
+### Backend
 
-📊 Dashboard & Analytics
-Project statistics
-Task overview
-Progress monitoring
-Overdue task tracking
-🗄 Database Management
-Relational database schema
-Project, User, Workspace, and Task tables
-Prisma ORM integration
+* Node.js
+* Express.js
 
-☁ Cloud Deployment
-Frontend deployment using Vercel
-Cloud-hosted PostgreSQL database using Neon
+### Database
 
-Features are described throughout the report including functional requirements and modules.
+* PostgreSQL
+* Neon Database
 
-4. Installation / Execution Steps to Run the Project
-Prerequisites
+### Authentication & Background Services
 
-Install the following software:
+* Clerk Authentication
+* Inngest Background Jobs
 
-Node.js (v18 or above)
-PostgreSQL
-Git
+### Development Tools
 
-Step 1: Clone Repository
+* Visual Studio Code
+* Git & GitHub
+* Postman
+* Prisma ORM
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+* Neon PostgreSQL (Database)
+
+---
+
+## 🏗️ System Architecture
+
+The application follows a **3-Tier Architecture**:
+
+### 1. Presentation Layer
+
+* User Interface
+* React.js Frontend
+* Responsive Design using Tailwind CSS
+
+### 2. Application Layer
+
+* Business Logic
+* REST APIs using Express.js
+* Authentication & Authorization
+
+### 3. Data Layer
+
+* PostgreSQL Database
+* Prisma ORM
+* Data Storage & Retrieval
+
+---
+
+## ✨ Features
+
+### 🔐 Secure Authentication
+
+* User Registration & Login
+* Clerk Authentication Integration
+* Session Management
+* Role-Based Access Control
+
+### 🏢 Workspace Management
+
+* Create Multiple Organizations
+* Workspace-Based Collaboration
+* Team Management
+
+### 📁 Project Management
+
+* Create Projects
+* Edit & Delete Projects
+* Set Project Priorities
+* Track Progress
+* Manage Deadlines
+
+### ✅ Task Management
+
+* Create Tasks
+* Assign Tasks to Team Members
+* Update Task Status
+* Monitor Task Lifecycle
+* Deadline Tracking
+
+### 👥 Team Collaboration
+
+* Invite Members via Email
+* Role Assignment
+* Workspace-Based Collaboration
+
+### 🔔 Automated Notifications
+
+* Task Assignment Alerts
+* Deadline Reminders
+* Background Job Processing using Inngest
+
+### 📊 Dashboard & Analytics
+
+* Project Statistics
+* Task Overview
+* Progress Monitoring
+* Overdue Task Tracking
+
+### 🗄️ Database Management
+
+* Relational Database Design
+* User, Workspace, Project & Task Modules
+* Prisma ORM Integration
+
+### ☁️ Cloud Deployment
+
+* Frontend Hosted on Vercel
+* Backend Hosted on Render
+* PostgreSQL Database Hosted on Neon
+
+---
+
+## 📂 Project Structure
+
+```bash
+Project-Management/
+│
+├── client/          # React Frontend
+├── server/          # Express Backend
+├── prisma/          # Database Schema & Migrations
+├── public/          # Static Assets
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+
+Make sure the following software is installed:
+
+* Node.js (v18 or above)
+* PostgreSQL
+* Git
+
+---
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/avirajj93-commits/Project-Management.git
+cd Project-Management
+```
 
-Step 2: Setup Frontend
+---
+
+### 2️⃣ Setup Frontend
+
+```bash
 cd client
 npm install
 npm run dev
+```
 
-Step 3: Setup Backend
+---
+
+### 3️⃣ Setup Backend
+
+```bash
 cd server
 npm install
+```
 
-Step 4: Configure Environment Variables
+---
 
-Create .env files inside both client and server folders and add:
+### 4️⃣ Configure Environment Variables
 
+Create `.env` files in both the `client` and `server` directories.
+
+```env
 DATABASE_URL=
+
 CLERK_SECRET_KEY=
+
 VITE_CLERK_PUBLISHABLE_KEY=
+
 INNGEST_EVENT_KEY=
+```
 
-Step 5: Run Database Migration
+---
+
+### 5️⃣ Run Database Migration
+
+```bash
 npx prisma db push
+```
 
-Step 6: Start Backend Server
+---
+
+### 6️⃣ Start Backend Server
+
+```bash
 npm start
+```
 
-Step 7: Open Application
+---
 
-Frontend:
+### 7️⃣ Access the Application
 
+#### Frontend
+
+```bash
 http://localhost:5173
+```
 
-Backend:
+#### Backend
 
+```bash
 http://localhost:3000
+```
 
-Installation instructions are also included in the project report.
+---
 
-5. Team Members
-👨‍💻 Team Members
-Aviraj Singh – EN23CS301234
-Avishka Vyas – EN23CS301236
-🎓 Guided By
-Prof. Priyanka Jain
-Prof. Kamini Vishwakarma
+## 📸 Screenshots
 
-Department of Computer Science & Engineering
-Medicaps University, Indore
+Add screenshots of the application here:
+
+* Dashboard
+* Project Management Page
+* Task Board
+* Team Collaboration Workspace
+* Analytics Dashboard
+
+---
+
+## 🎯 Future Enhancements
+
+* Real-Time Chat Integration
+* File Sharing & Attachments
+* Kanban Board View
+* Gantt Chart Visualization
+* Advanced Reporting & Analytics
+* Mobile Application Support
+
+---
+
+
+---
+
+
+---
+
+## 📄 License
+
+This project is developed for academic and learning purposes.
+
+---
+
+### ⭐ If you found this project useful, consider giving it a star on GitHub!
